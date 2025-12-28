@@ -1,8 +1,10 @@
+
 # 🐍 DeyvinScript (`.deyvin`)
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Style: Sênior](https://img.shields.io/badge/Mindset-S%C3%AAnior-orange)](https://youtube.com)
+![Visualizações](https://visitor-badge.laobi.icu/badge?page_id=Gustavo-de-Lima-G-000-Akiko-Yuuuki.Deyvin.Script)
 
 <div align="left">
   <a href="https://www.youtube.com/@manodeyvin">
@@ -16,7 +18,6 @@
 <br>
 
 > *"Porque se é para automatizar, que seja com estilo, café do lado e o mindset de quem não quer perder tempo com configuração manual."* ☕
-![Visualizações](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGustavo-de-Lima-G-000-Akiko-Yuuuki%2FDeyvin.Script&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visualizacoes&edge_flat=false)
 
 O **DeyvinScript** é uma ferramenta de automação de ambiente de desenvolvimento feita para quem busca eficiência máxima. O projeto nasceu da vontade de dar uma utilidade épica para a extensão `.deyvin`, unindo a versatilidade do Python com a produtividade que todo desenvolvedor almeja.
 ##  O que é o DeyvinScript?
