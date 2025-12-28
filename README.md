@@ -4,11 +4,20 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Style: Sênior](https://img.shields.io/badge/Mindset-S%C3%AAnior-orange)](https://youtube.com)
 
-[![png](https://raw.githubusercontent.com/Gustavo-de-Lima-G-000-Akiko-Yuuuki/Deyvin.Script/refs/heads/main/Icone.ico)](https://www.youtube.com/@manodeyvin)
+<div align="left">
+  <a href="https://www.youtube.com/@manodeyvin">
+    <img src="https://raw.githubusercontent.com/Gustavo-de-Lima-G-000-Akiko-Yuuuki/Deyvin.Script/refs/heads/main/Icone.ico" height="280" style="vertical-align: middle;">
+  </a>
+  <a href="https://www.youtube.com/@manodeyvin">
+    <img src="https://github.com/Gustavo-de-Lima-G-000-Akiko-Yuuuki/Deyvin.Script/blob/main/Imagem.png?raw=true" height="280" style="vertical-align: middle;">
+  </a>
+</div>
+
+<br>
+
 > *"Porque se é para automatizar, que seja com estilo, café do lado e o mindset de quem não quer perder tempo com configuração manual."* ☕
 
 O **DeyvinScript** é uma ferramenta de automação de ambiente de desenvolvimento feita para quem busca eficiência máxima. O projeto nasceu da vontade de dar uma utilidade épica para a extensão `.deyvin`, unindo a versatilidade do Python com a produtividade que todo desenvolvedor almeja.
-
 ##  O que é o DeyvinScript?
 
 É uma camada de automação escrita em Python que interpreta arquivos com a extensão customizada `.deyvin`. Ele foi projetado para configurar setups, instalar dependências e preparar seu workflow em segundos, garantindo que seu "Mindset" esteja focado no que importa.
