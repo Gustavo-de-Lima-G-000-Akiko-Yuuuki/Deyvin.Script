@@ -1,6 +1,6 @@
 # DeyvinScript – Automate your development environment
 
-DeyvinScript (Apresentando .deyvin como um Script de Automação nomeado de forma querida  (DeyvinScript)
+DeyvinScript (Apresentando .deyvin queria um uso para essa extensao .deyvin entao aqui esta pode ser que futuramente mude mas o Mano Deyvin adora python então de forma querida  (DeyvinScript)
 is a tiny domain‑specific language (DSL) for automating
 common tasks on your desktop.  It grew out of a simple idea: instead of
 repeating the same steps every day, why not write them down in a
