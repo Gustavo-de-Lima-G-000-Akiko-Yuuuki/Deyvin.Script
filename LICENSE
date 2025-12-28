@@ -1,0 +1,28 @@
+DEYVIN PUBLIC LICENSE (DPL)
+Versão 1.0 - Dezembro de 2025
+
+Copyright (c) 2025 Gustavo de Lima Garcia
+
+1. CONCESSÃO DE LICENÇA
+É concedida permissão, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados, para utilizar, copiar, modificar e distribuir o software, desde que respeitadas as condições financeiras e de atribuição descritas abaixo.
+
+2. REIVINDICAÇÃO DA EXTENSÃO (.deyvin)
+O Criador deste software reivindica a exclusividade e a autoria do formato de especificação de arquivo com a extensão .deyvin.
+Qualquer software terceiro que utilize, gere ou manipule arquivos com a extensão .deyvin deve fazer referência explícita ao criador original nesta licença.
+A modificação da estrutura do formato .deyvin não desvincula o dever de atribuição e as obrigações financeiras aqui previstas.
+
+3. ATRIBUIÇÃO E REFERÊNCIA
+O aviso de copyright acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do Software.
+Créditos Obrigatórios: Em qualquer interface de usuário (UI) ou documentação do produto final que utilize este código ou a extensão .deyvin, deve constar de forma visível: "Desenvolvido com tecnologia baseada na licença DPL por Gustavo de Lima Garcia".
+
+4. CLÁUSULA DE USO FINANCEIRO E ROYALTIES
+O uso deste software para fins lucrativos ou em atividades que gerem receita está sujeito às seguintes condições:
+Isenção: O uso é totalmente gratuito para qualquer indivíduo ou entidade cuja receita bruta gerada pelo uso deste software (ou produtos derivados) seja de até R$ 800,00 (oitocentos reais).
+Participação de Lucros: Caso a receita bruta mensal (ou por venda única de produto derivado) ultrapasse o valor de R$ 800,00, o licenciado compromete-se obrigatoriamente a repassar 50% (cinquenta por cento) do valor total arrecadado ao Criador original do software.
+Transparência: O usuário da licença deve manter registros financeiros básicos para comprovação de ganhos, caso solicitado pelo Criador.
+
+5. MELHORIAS E DERIVAÇÕES
+Quaisquer melhorias ou modificações realizadas no software original permanecem sob os termos desta licença. O autor da modificação possui o direito sobre a sua alteração, mas o código base e a lógica de negócio continuam sujeitos ao repasse financeiro estipulado na Cláusula 4.
+
+6. ISENÇÃO DE GARANTIA
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO A, GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO. EM NENHUM CASO OS AUTORES OU TITULARES DE DIREITOS AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU DE OUTRA FORMA, DECORRENTE DE, FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.
