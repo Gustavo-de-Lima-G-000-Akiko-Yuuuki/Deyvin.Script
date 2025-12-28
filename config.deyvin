@@ -1,0 +1,11 @@
+# Exemplo de script de automação para DeyvinScript
+#
+# Este arquivo demonstra algumas das funcionalidades básicas da DSL.
+# Cada linha começa com 'step' seguida do nome do comando e um argumento
+# entre aspas.  Linhas vazias ou começando com '#' são ignoradas.
+
+step open "code"              # abre o Visual Studio Code (ou editor padrão)
+step open "chrome"           # abre o navegador Firefox
+step wait "2"                # aguarda 2 segundos
+#step clean "temp_folder"     # limpa o diretório temporário do sistema
+step notify "Segue lá o Maninho: https://www.youtube.com/@manodeyvin" # exibe uma notificação ou imprime no console
