@@ -1,181 +1,188 @@
-# DeyvinScript – Automate your development environment
+# 🐍 DeyvinScript (`.deyvin`)
 
-DeyvinScript (Apresentando .deyvin queria um uso para essa extensao .deyvin entao aqui esta pode ser que futuramente mude mas o Mano Deyvin adora python então de forma querida  (DeyvinScript)
-is a tiny domain‑specific language (DSL) for automating
-common tasks on your desktop.  It grew out of a simple idea: instead of
-repeating the same steps every day, why not write them down in a
-portable text file and let your computer do the work?  A `.deyvin`
-script can open your favourite applications, tidy up temporary files
-and even send you a desktop notification when everything is ready.
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Style: Sênior](https://img.shields.io/badge/Mindset-S%C3%AAnior-orange)](https://youtube.com)
 
-This repository contains an interpreter for `.deyvin` files (written in
-pure Python), a VS Code syntax highlighting extension and a sample
-script to get you started.  The interpreter is intentionally small and
-easy to read – feel free to extend it with your own commands.
+> *"Porque se é para automatizar, que seja com estilo, café do lado e o mindset de quem não quer perder tempo com configuração manual."* ☕
 
-## Why DeyvinScript?
+O **DeyvinScript** é uma ferramenta de automação de ambiente de desenvolvimento feita para quem busca eficiência máxima. O projeto nasceu da vontade de dar uma utilidade épica para a extensão `.deyvin`, unindo a versatilidade do Python com a produtividade que todo desenvolvedor almeja.
 
-* **Simple syntax** – each action is defined on a single line beginning
-  with `step`.  Arguments are enclosed in double quotes.  Comment
-  lines start with `#`.
-* **Cross‑platform notifications** – the `notify` command uses the
-  optional [`desktop_notifier`](https://pypi.org/project/desktop-notifier/) library when available.  This
-  library sends notifications via different backends depending on the
-  operating system【211677555979899†L32-L42】.  If `desktop_notifier` is not installed the
-  interpreter falls back to `notify-send`, AppleScript or Windows
-  toast notifications and finally prints messages to the console.
-* **Safe cleaning** – the `clean` command deletes all contents of a
-  directory but deliberately avoids deleting the root directory.  The
-  implementation uses `shutil.rmtree` to recursively remove
-  subdirectories【262490351648928†L313-L320】 and resolves common aliases like
-  `temp_folder`, `downloads` and `desktop`.
-* **Portable process launching** – the `open` command locates
-  executables using `shutil.which`, which searches your `PATH` for
-  programs【262490351648928†L449-L454】.  If no executable is found the interpreter
-  falls back to running the argument via the shell (or `os.startfile` on
-  Windows).
+##  O que é o DeyvinScript?
 
-## Getting started
+É uma camada de automação escrita em Python que interpreta arquivos com a extensão customizada `.deyvin`. Ele foi projetado para configurar setups, instalar dependências e preparar seu workflow em segundos, garantindo que seu "Mindset" esteja focado no que importa.
 
-### Prerequisites
+## ✨ Funcionalidades
 
-DeyvinScript requires Python 3.8+ and works on Linux, macOS and
-Windows.  For notifications you can optionally install
-[`desktop-notifier`](https://pypi.org/project/desktop-notifier/)【211677555979899†L32-L42】 or
-[`win10toast`](https://pypi.org/project/win10toast/) on Windows.
+-   **Interpretação Customizada**: Lê arquivos `.deyvin` com comandos simples.
+-   **Setup Ágil**: Instalação de dependências e configuração de ambiente.
+-   **Foco em Windows**: Pronto para rodar via scripts automatizados (`.bat`).
+-   **Extensível**: Fácil de modificar para incluir novos comandos de automação.
+
+## 📦 Como Usar
+
+### 1. Instalação
+Baixe a versão mais recente diretamente na nossa página de releases:
+👉 [DeyvinScript Releases](https://github.com/Gustavo-de-Lima-G-000-Akiko-Yuuuki/Deyvin.Script/releases)
+
+### 2. Configuração
+1. extraia o arquivo `.zip`
+1. Abra o arquivo `config.deyvin` em qualquer editor de texto.
+2. O comportamento da automação é definido no arquivo `config.deyvin`.
+3. Modifique as instruções de acordo com a necessidade do seu projeto.
+4. Salve o arquivo.
+
+### 3. Execução
+Para rodar a mágica, basta executar o arquivo batch incluído:
+```bash
+Run_Python.bat
+```
+*O comando interno executado é:*
+```powershell
+python.exe -s deyvin_script.py config.deyvin
+```
+
+### 4. Resultado
+Agora é só sentar, tomar um gole de café e ver o Python trabalhar por você. (Sim, existem outras formas, mas esta é a que gostei de fazer no domingo).
+
+## 📄 Estrutura do Projeto
+
+-   `deyvin_script.py`: O coração do projeto (o interpretador).
+-   `config.deyvin`: Onde você define sua automação.
+-   `Run_Python.bat`: Atalho para quem não quer digitar comandos no terminal.
+
+## 🤝 Contribuindo
+
+Sentiu falta de alguma feature "Sênior"? Sinta-se à vontade para abrir uma **Issue** ou enviar um **Pull Request**. Toda ajuda para tornar o workflow mais épico é bem-vinda!
+
+---
+*Feito com ☕ e Python em homenagem ao Mano Deyvin.*
+---
+---
+*SEM GPT e COM DESCULPAS: DeyvinScript (Apresentando .deyvin queria um uso para essa extensao .deyvin entao aqui esta pode ser que futuramente mude mas o Mano Deyvin adora python então de forma querida, gosto de java mas nao tenho paciencia para Java mas tenho muita para c++/c, assembly, pyton, etc*
+---
+
+# WIKI DeyvinScript – Automatize seu ambiente de desenvolvimento
+
+DeyvinScript é uma linguagem de domínio específico (DSL) criada para automatizar tarefas comuns no seu computador. A ideia é simples: em vez de repetir manualmente as mesmas etapas todos os dias, você descreve o procedimento em um arquivo de texto `.deyvin` e deixa o interpretador executá‑las por você. Um script `.deyvin` consegue abrir aplicativos, limpar diretórios temporários e até enviar uma notificação na área de trabalho quando tudo estiver concluído.
+
+Este repositório inclui:
+- **Interpretador em Python** – o núcleo que lê e executa arquivos `.deyvin`. O código é pequeno e fácil de entender, facilitando a criação de novos comandos.
+- **Extensão para VS Code** – oferece realce de sintaxe para arquivos `.deyvin`, tornando mais fácil ler e escrever scripts.
+- **Exemplo de script** – um arquivo `sample.deyvin` que demonstra comandos básicos para você começar.
+
+## Por que usar o DeyvinScript?
+
+- **Sintaxe simples** – cada ação é definida em uma única linha que começa com `step`, seguida do nome do comando e dos argumentos entre aspas duplas. Linhas em branco ou iniciadas com `#` são ignoradas.
+- **Notificações multiplataforma** – o comando `notify` utiliza `desktop_notifier` quando a biblioteca está instalada. Caso contrário, o interpretador recorre a utilitários nativos (`notify‑send`, AppleScript ou `win10toast`) e, se nada estiver disponível, imprime a mensagem no console【211677555979899†L32-L42】.
+- **Limpeza segura de pastas** – o comando `clean` remove todos os arquivos e subdiretórios de um diretório alvo, mas se recusa a apagar a pasta raiz para evitar acidentes. A implementação usa `shutil.rmtree` e aceita atalhos como `temp_folder`, `downloads` e `desktop`【262490351648928†L313-L320】.
+- **Abertura de processos de forma portátil** – o comando `open` localiza executáveis utilizando `shutil.which` (buscando no `PATH`) e, se não encontrar, tenta abrir o argumento via shell ou com `os.startfile` no Windows【262490351648928†L449-L454】.
+
+Esses recursos tornam o DeyvinScript ideal para configurar seu ambiente de trabalho com um único comando, agilizando a rotina diária.
+
+## Começando
+
+### Pré‑requisitos
+
+- Python **3.8** ou superior.
+- Linux, macOS ou Windows.
+
+Para receber notificações mais ricas, é recomendável instalar opcionalmente as bibliotecas `desktop-notifier` e `win10toast`:
 
 ```bash
-# optional (for nicer notifications)
 pip install desktop-notifier win10toast
 ```
 
-### Instalação via PyPI
+### Instalação via PyPI (Pendente)
 
-Você pode instalar o DeyvinScript diretamente do PyPI.  Isto torna o
-comando `deyvin` disponível no seu sistema, permitindo executar
-arquivos `.deyvin` de qualquer lugar.  Para instalar a versão mais
-recente (incluindo dependências opcionais para notificações mais
-ricas) execute:
+Instale a última versão através do PyPI. O comando `deyvin` ficará disponível globalmente:
 
 ```bash
+# com dependências opcionais de notificação
 pip install deyvin-script[notify]
-```
 
-Sem o sufixo `[notify]` as dependências opcionais não serão
-instaladas.  Para instalar apenas os componentes essenciais use:
-
-```bash
+# apenas a biblioteca principal
 pip install deyvin-script
 ```
 
-### Executando um script
+### Executando um script `.deyvin`
 
-Após a instalação você pode executar um arquivo `.deyvin` com o
-comando `deyvin`.  Um script de exemplo está disponível em
-`sample.deyvin`:
+Uma vez instalado, você pode executar scripts `.deyvin` de qualquer lugar:
 
 ```bash
-# rodar o script de exemplo
-deyvin sample.deyvin
-
-# ativar logs detalhados
-deyvin -v sample.deyvin
+deyvin config.deyvin
+# ou com log detalhado
+deyvin -v config.deyvin
 ```
 
-Se estiver utilizando o projeto em desenvolvimento (clonado do GitHub)
-você ainda pode executar o módulo diretamente com Python:
+Se estiver desenvolvendo localmente (clonando o repositório), execute diretamente com Python:
 
 ```bash
-python deyvin_script.py sample.deyvin
+python deyvin_script.py config.deyvin
 ```
 
-Também é possível criar um alias de shell para abreviar o comando
-durante o desenvolvimento, por exemplo em `~/.bashrc` ou
-`~/.zshrc`:
+Também é possível criar um alias no seu shell para encurtar o comando durante o desenvolvimento:
 
 ```bash
-alias deyvin='python3 /path/to/deyvin_script/deyvin_script.py'
+alias deyvin='python3 /caminho/para/deyvin_script/deyvin_script.py'
 ```
 
-### Installing the VS Code extension
+### Instalando a extensão do VS Code
 
-This repository includes a minimal VS Code extension in
-`vscode-deyvin/` that provides syntax highlighting for `.deyvin` files.
-To install it locally:
+A pasta `vscode-deyvin/` contém uma extensão simples que adiciona realce de sintaxe para arquivos `.deyvin`. Para instalá‑la manualmente:
 
-1. Open the command palette in VS Code (`F1` or `Ctrl+Shift+P`).
-2. Choose **Developer: Install Extension from VSIX…**.
-3. Browse to the `vscode-deyvin` folder and select a packaged VSIX file (you can create it by running `vsce package` inside the `vscode-deyvin` directory).
-4. Reload VS Code and open a `.deyvin` file to see syntax
-   highlighting.
+1. Gere um arquivo `.vsix` rodando `vsce package` dentro de `vscode-deyvin`.
+2. No VS Code, pressione `F1` ou `Ctrl+Shift+P` e selecione **Developer: Install Extension from VSIX…**.
+3. Escolha o `.vsix` gerado e reinicie o VS Code.
 
-The extension defines language aliases, file associations and a simple
-TextMate grammar for keywords, commands, strings and comments.
+A extensão associa a extensão de arquivo `.deyvin` a uma gramática TextMate que destaca palavras‑chave (`step`), comandos (`open`, `clean`, `notify`, `wait`), strings entre aspas e comentários.
 
-## Script syntax
+## Sintaxe dos scripts
 
-A DeyvinScript file is a UTF‑8 encoded plain text file.  Each
-non‑empty line must begin with the word `step` followed by a command
-name and one or more arguments in double quotes.  Anything after a
-`#` character on a line is considered a comment.  Whitespace is
-insignificant outside of quoted strings.
+Um script DeyvinScript é um arquivo de texto UTF‑8. Cada linha relevante deve começar com `step` e o nome de um comando. Os argumentos ficam entre aspas duplas. Comentários iniciados com `#` são ignorados. Linhas vazias são puladas.
 
-Commands are case‑insensitive.  For example:
+Exemplo:
 
 ```text
-step open "firefox"      # launch Firefox
-step wait "3"           # wait three seconds
-step clean "downloads"  # remove files from your Downloads folder
-step notify "Feito!"    # display a notification
+step open "code"              # abre o Visual Studio Code (ou editor padrão)
+step open "chrome"           # abre o navegador Firefox
+step wait "2"                # aguarda 2 segundos
+#step clean "temp_folder"     # limpa o diretório temporário do sistema
+step notify "Segue lá o Maninho: https://www.youtube.com/@manodeyvin" # exibe uma notificação ou imprime no console
+
 ```
 
-### Supported commands
+### Comandos suportados
 
-| Command | Description | Example |
-| --- | --- | --- |
-| `open` | Launch an application or open a file/directory.  Uses `shutil.which` to locate the executable【262490351648928†L449-L454】.  If a path is supplied, attempts to open it with the default OS mechanism. | `step open "code"` |
-| `clean` | Delete all contents inside a directory using `shutil.rmtree`【262490351648928†L313-L320】.  Accepts aliases `temp_folder`, `downloads`, `desktop` and `cache`.  Does not delete the directory itself. | `step clean "temp_folder"` |
-| `notify` | Display a desktop notification.  Uses the `desktop_notifier` library when available【211677555979899†L32-L42】; otherwise falls back to platform‑specific commands or prints to the console. | `step notify "Ambiente pronto"` |
-| `wait` | Pause execution for a number of seconds (float). | `step wait "1.5"` |
+| Comando | Descrição | Exemplo |
+| ------- | --------- | ------- |
+| `open`  | Abre um programa, arquivo ou diretório. Procura o executável no `PATH`; se um caminho é passado, tenta abri‑lo com o mecanismo padrão do SO【262490351648928†L449-L454】. | `step open "code"` |
+| `clean` | Remove todo o conteúdo de uma pasta usando `shutil.rmtree`【262490351648928†L313-L320】. Aceita aliases (`temp_folder`, `downloads`, `desktop`, `cache`). Não remove a pasta em si. | `step clean "temp_folder"` |
+| `notify` | Exibe uma notificação de área de trabalho, usando `desktop_notifier` quando disponível【211677555979899†L32-L42】; caso contrário imprime no console. | `step notify "Tudo pronto"` |
+| `wait`   | Pausa a execução por um número de segundos (pode ser decimal). | `step wait "1.5"` |
 
-Experimental commands such as `run`, `copy` and `backup` are included in
-`deyvin.commands` but are commented out by default.  You can enable them
-by adding them to the `COMMANDS` dictionary or by passing your own
-mapping when instantiating the interpreter.
+Comandos experimentais como `run`, `copy` e `backup` estão implementados em `deyvin.commands` mas vêm desabilitados. Você pode habilitá‑los adicionando‑os à tabela `COMMANDS` ao criar o interpretador ou passando um dicionário personalizado.
 
-## Extending DeyvinScript
+## Estendendo o DeyvinScript
 
-The interpreter can be easily extended to support new commands.  To add
-a command, define a new function in `deyvin/commands.py` that accepts
-a single string argument and performs the desired action.  Then
-register the command either by modifying the `COMMANDS` dictionary or
-by supplying a custom mapping when creating the interpreter:
+É possível criar seus próprios comandos sem alterar o núcleo. Basta definir uma função em `deyvin/commands.py` que receba uma string e realize a ação desejada, e registrar essa função ao instanciar o interpretador:
 
 ```python
 from deyvin.interpreter import Interpreter
 
-def hello(name: str) -> None:
-    print(f"Hello, {name}!")
+def hello(nome: str) -> None:
+    print(f"Olá, {nome}!")
 
-interpreter = Interpreter(commands={"hello": hello})
-interpreter.run("script.deyvin")
+interprete = Interpreter(commands={"hello": hello})
+interprete.run("config.deyvin")
 ```
 
-## Caveats and safety
+## Cuidados e segurança
 
-* **Be careful with `clean`** – it will permanently delete files.  The
-  implementation refuses to clean the root directory to prevent
-  catastrophic mistakes, but you should still review your scripts
-  carefully.
-* **Notification support depends on your platform** – some systems
-  require additional packages (`desktop-notifier` on Linux/macOS,
-  `win10toast` on Windows) to display notifications.  When no
-  backend is available the message will be printed instead.
-* **Experimental commands** – `run`, `copy` and `backup` are provided
-  as examples but are disabled by default to avoid accidental misuse.
-  Enable them at your own risk.
+- **Atenção ao usar `clean`** – o comando apaga arquivos de forma permanente. Embora haja proteção contra apagar diretórios raiz, revise seus scripts antes de executá‑los.
+- **Dependências de notificação** – para notificar corretamente em cada sistema operacional você pode precisar instalar `desktop-notifier` (Linux/macOS) ou `win10toast` (Windows).
+- **Comandos experimentais** – `run`, `copy` e `backup` são exemplos avançados e não estão ativados por padrão. Utilize com cautela ao habilitá‑los.
 
-## License
+## Licença
 
-This project is provided under the MIT License.  See
-`LICENSE` for full details.
+Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais detalhes.
