@@ -137,45 +137,142 @@ A pasta `vscode-deyvin/` contém uma extensão simples que adiciona realce de si
 
 A extensão associa a extensão de arquivo `.deyvin` a uma gramática TextMate que destaca palavras‑chave (`step`), comandos (`open`, `clean`, `notify`, `wait`), strings entre aspas e comentários.
 
-## Sintaxe dos scripts
+Aqui está o conteúdo organizado e formatado em **Markdown** padrão para o GitHub, utilizando as melhores práticas de documentação (tabelas, blocos de código, alertas e ícones).
 
-Um script DeyvinScript é um arquivo de texto UTF‑8. Cada linha relevante deve começar com `step` e o nome de um comando. Os argumentos ficam entre aspas duplas. Comentários iniciados com `#` são ignorados. Linhas vazias são puladas.
+Você pode copiar o código abaixo e colar diretamente no seu arquivo `README.md`.
 
-Exemplo:
+---
 
-```text
-step open "code"              # abre o Visual Studio Code (ou editor padrão)
-step open "chrome"           # abre o navegador Firefox
-step wait "2"                # aguarda 2 segundos
-#step clean "temp_folder"     # limpa o diretório temporário do sistema
-step notify "Segue lá o Maninho: https://www.youtube.com/@manodeyvin" # exibe uma notificação ou imprime no console
 
+
+### 🛠️ Regras Gerais
+
+Para manter a simplicidade e legibilidade, o interpretador segue estas diretrizes:
+
+*   **Instruções:** Cada linha de comando válida deve obrigatoriamente iniciar com a palavra-chave `step`.
+*   **Argumentos:** Os valores passados aos comandos devem estar entre aspas duplas (`"`).
+*   **Comentários:** Linhas iniciadas com `#` são ignoradas pelo interpretador.
+*   **Espaçamento:** Linhas vazias são ignoradas automaticamente para facilitar a organização visual.
+*   **Case Insensitivity:** Os nomes dos comandos não diferenciam maiúsculas de minúsculas (`OPEN` é o mesmo que `open`).
+
+---
+
+### 1. Exemplos Práticos
+```markdown
+#### 1. Exemplo Básico
+Ideal para entender o funcionamento inicial.
+```bash
+step open "code"              # Abre o Visual Studio Code (ou editor padrão)
+step open "chrome"            # Abre o navegador
+step wait "2"                 # Aguarda 2 segundos
+# step clean "temp_folder"    # Linha comentada (não será executada)
+step notify "Siga o Maninho: https://www.youtube.com/@manodeyvin"
 ```
 
-### Comandos suportados
+#### 2. Setup de Ambiente de Trabalho
+Automatize a abertura de todas as suas ferramentas de uma vez.
+```bash
+# Ambiente de trabalho padrão
+step notify "Preparando ambiente..."
+
+step open "chrome"
+step open "code"
+step open "explorer"          # No Windows, abre o Explorador de Arquivos
+step wait "1"
+
+step open "C:/Projetos"       # Abre um diretório específico
+step notify "Ambiente pronto 🚀"
+```
+
+#### 3. Rotina de Limpeza
+Mantenha seu sistema leve antes de começar a codar.
+```bash
+# Limpeza rápida antes de iniciar o dia
+step notify "Iniciando limpeza do sistema"
+
+step clean "temp_folder"
+step clean "downloads"
+step wait "0.5"
+
+step notify "Limpeza concluída"
+```
+
+---
+
+### 📖 Comandos Suportados
 
 | Comando | Descrição | Exemplo |
-| ------- | --------- | ------- |
-| `open`  | Abre um programa, arquivo ou diretório. Procura o executável no `PATH`; se um caminho é passado, tenta abri‑lo com o mecanismo padrão do SO【262490351648928†L449-L454】. | `step open "code"` |
-| `clean` | Remove todo o conteúdo de uma pasta usando `shutil.rmtree`【262490351648928†L313-L320】. Aceita aliases (`temp_folder`, `downloads`, `desktop`, `cache`). Não remove a pasta em si. | `step clean "temp_folder"` |
-| `notify` | Exibe uma notificação de área de trabalho, usando `desktop_notifier` quando disponível【211677555979899†L32-L42】; caso contrário imprime no console. | `step notify "Tudo pronto"` |
-| `wait`   | Pausa a execução por um número de segundos (pode ser decimal). | `step wait "1.5"` |
+| :--- | :--- | :--- |
+| `open` | Abre um programa, arquivo ou diretório. Procura no PATH ou usa o mecanismo padrão do SO. | `step open "code"` |
+| `clean` | Remove o conteúdo de uma pasta (sem apagar a raiz). Aceita aliases (veja abaixo). | `step clean "temp_folder"` |
+| `notify` | Exibe uma notificação de sistema ou mensagem no console. | `step notify "Tudo pronto"` |
+| `wait` | Pausa a execução por N segundos (aceita valores decimais). | `step wait "1.5"` |
 
-Comandos experimentais como `run`, `copy` e `backup` estão implementados em `deyvin.commands` mas vêm desabilitados. Você pode habilitá‑los adicionando‑os à tabela `COMMANDS` ao criar o interpretador ou passando um dicionário personalizado.
+#### 📂 Aliases de Diretórios Reconhecidos
+Ao usar o comando `clean`, você pode utilizar atalhos para pastas comuns:
+*   `temp_folder`: Pasta temporária do sistema.
+*   `downloads`: Pasta de downloads do usuário.
+*   `desktop`: Área de trabalho.
+*   `cache`: Diretórios comuns de cache (dependente do SO).
 
-## Estendendo o DeyvinScript
+---
 
-É possível criar seus próprios comandos sem alterar o núcleo. Basta definir uma função em `deyvin/commands.py` que receba uma string e realize a ação desejada, e registrar essa função ao instanciar o interpretador:
+### 🧪 Comandos Experimentais
+> [!CAUTION]
+> **Atenção:** Os comandos abaixo já estão implementados, mas vêm desabilitados por padrão no dicionário `COMMANDS` para garantir a segurança do sistema.
 
+| Comando | Função |
+| :--- | :--- |
+| `run` | Executa comandos diretos do terminal/sistema. |
+| `copy` | Copia arquivos ou diretórios de origem para destino. |
+| `backup` | Cria cópias de segurança simples de pastas selecionadas. |
+
+Para habilitá-los, adicione a função correspondente ao dicionário de comandos no núcleo do interpretador.
+
+---
+
+### 🧩 Estendendo o DeyvinScript
+
+O DeyvinScript foi projetado para ser **extensível**. Você pode criar novos comandos em Python e injetá-los no interpretador sem tocar no código base.
+
+#### Exemplo: Criando um comando personalizado
 ```python
 from deyvin.interpreter import Interpreter
 
+# 1. Defina a função Python
 def hello(nome: str) -> None:
     print(f"Olá, {nome}!")
 
-interprete = Interpreter(commands={"hello": hello})
-interprete.run("config.deyvin")
+# 2. Registre no interpretador
+interprete = Interpreter(commands={
+    "hello": hello
+})
+
+interprete.run("meu_script.deyvin")
 ```
+
+**No seu arquivo `.deyvin`:**
+```bash
+step hello "Maninho"
+```
+
+---
+
+### 💡 Boas Práticas
+
+1.  **Responsabilidade Única:** Cada comando deve fazer apenas uma coisa bem feita.
+2.  **Segurança:** Evite comandos destrutivos sem validação prévia.
+3.  **Feedback:** Sempre use `notify` em scripts longos para saber em que pé está a execução.
+4.  **Simplicidade:** Prefira nomes de comandos curtos e intuitivos.
+
+---
+
+### 🗺️ Roadmap de Evolução
+Futuras implementações previstas para a linguagem:
+- [ ] Suporte a variáveis (`set`).
+- [ ] Verificações condicionais (`if exists`).
+- [ ] Logs estruturados para depuração.
+- [ ] Extensão oficial para VS Code (Highlighting).
 
 ## Cuidados e segurança
 
